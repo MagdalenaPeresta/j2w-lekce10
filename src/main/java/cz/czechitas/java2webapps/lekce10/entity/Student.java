@@ -73,6 +73,6 @@ public class Student {
 
   @Override
   public String toString() {
-    return String.format("%s %s [%d]", jmeno, prijmeni, id);
+    return String.format("%s %s ", jmeno, prijmeni);
   }
 }

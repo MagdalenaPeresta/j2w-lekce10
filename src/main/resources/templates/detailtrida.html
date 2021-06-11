@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="cs" xmlns:th="http://www.thymeleaf.org">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body class="fs-4 text-center" >
+<main class="container">
+    <h1 th:utext="${trida.nazev}"></h1>
+    <span>Třídní učitel: </span>
+    <h3 th:utext="${trida.tridniUcitel}"></h3>
+
+    <span>Seznam studentů: </span>
+    <table class="table table-borderless">
+        <tr th:each="student: ${trida.studenti}">
+            <td><a th:utext="${student}" th:href="@{/student(id=${student.id})}"></a></td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="d-grid gap-2">
+        <a class="btn btn-primary" type="button" href="/"><h3>Zpět na seznam tříd</h3></a>
+    </div>
+</main>
+
+</body>
+</html>

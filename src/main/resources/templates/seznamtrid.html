@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="cs" xmlns:th="http://www.thymeleaf.org">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<head>
+    <meta charset="UTF-8">
+    <title>Seznam trid</title>
+</head>
+<body class="fs-4 text-center">
+<main class="container">
+    <h1>Seznam Tříd</h1>
+    <table class="table table-borderless">
+        <thead>
+        <tr>
+            <th>Třída</th>
+        </tr>
+        </thead>
+
+<tr th:each="trida: ${tridy}">
+    <td><a th:utext="${trida.nazev}" th:href="@{/trida(id=${trida.id})}"></a></td>
+</tr>
+
+</table>
+
+</main>
+</body>
+</body>
+</html>
